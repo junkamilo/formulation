@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>formulario</title>
+</head>
+
+<body>
+  <form action="action.php" method="post" target="_parent" autocomplete="off">
+    <fieldset>
+      <legend>campo requerido</legend>
+      <label for="number">numero de incidencia:</label>
+      <input type="text" id="number" name="number" pattern="[A-Za-z0-9]+" maxlength="50" minlength="10"
+        placeholder="n° incidencia" required>
+
+      <label for="datehour">fecha/hora de recepción:</label>
+      <input type="date" id="datehour" name="datehour" required value="2024-02-27">
+      <input type="datetime" id="datehour" name="datehour" required value="2018-06-12T19:30" min="2018-06-07T00:00"
+        max="2018-06-14T00:00">
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>información del usuario</legend>
+      <label for="name">Nombre del cliente</label>
+      <input type="text" id="name" name="name" pattern="[a-zA-Z ]{2,420}" placeholder="Nombre" minlength="4"
+        maxlength="20" required>
+      <label for="id">Identificación</label>
+      <input type="text" id="id" name="id" pattern="[0-9]+" minlength="2" maxlength="15" placeholder="N° identificación"
+        required><br>
+      <br>
+      <label for="idy">tipo de Identificación</label>
+      <select name="idy" id="idy" required>idy
+        <option value="" selected>CC</option>
+        <option value="cedula">CC (cedula ciudadana)</option>
+        <option value="tarjetaidentidad">TI (Tarjeta de identidad)</option>
+        <option value="registrocivil">RC Registro civil</option>
+        <option value="cedulaextranjera">CE Cédula de extranjería</option>
+        <option value="carneidentidad">CI Carné de identidad</option>
+      </select>
+
+      <!--tipo de solicitante-->
+      <label for="typesolisitud">tipo de solicitante</label>
+      <select name="typesolisitud" id="typesolisitud" required>idy
+        <option value="" selected>solicitante</option>
+        <option value="docente">01-Docente</option>
+        <option value="civil">02-Civil</option>
+        <option value="juridica">03-Juridica</option>
+        <option value="solicitante">04-Solicitante</option>
+        <option value="personal">05-personal</option><br>
+        <br>
+      </select><br>
+      <br>
+      <!--email-->
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="email"
+        required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Información de contacto</legend>
+      <label for="pais">pais</label>
+      <input list="pais" placeholder="seleciona pais" required>
+      <datalist id="pais">
+        <option value="colombia"></option>
+        <option value="brasil"></option>
+        <option value="panama"></option>
+        <option value="peru"></option>
+        <option value="chile"></option>
+        <option value="argentina"></option>
+        <option value="paraguay"></option>
+      </datalist>
+
+      <label for="depart">Departamento</label>
+      <input list="depart" placeholder="seleciona departamento" required>
+      <datalist id="depart">
+        <option value="Bogota D.C"></option>
+        <option value="Lima"></option>
+        <option value="panama"></option>
+        <option value="brasilia"></option>
+        <option value="buenosaires"></option>
+        <option value="santiagodechile"></option>
+        <option value="asunción"></option>
+      </datalist><br>
+      <br>
+      <label for="city">Ciudad</label>
+      <input list="city" placeholder="seleciona Ciudad" required>
+      <datalist id="city">
+        <option value="Bogota D.C"></option>
+        <option value="Lima"></option>
+        <option value="panama"></option>
+        <option value="brasilia"></option>
+        <option value="buenosaires"></option>
+        <option value="santiagodechile"></option>
+        <option value="asunción"></option>
+      </datalist><br>
+      <br>
+      <label for="tel">Telefono</label>
+      <input type="tel" id="tel" name="tel" pattern="[0-9]+" placeholder="### ### ####">
+      <label for="cel">celular</label>
+      <input type="number" id="cel" name="cel" min="1" max="100000000" step="1"><br>
+      <br>
+      <label for="contacto">Medio de contacto preferido</label>
+      <select name="typesolisitud" id="typesolisitud" required>idy
+        <option value="" selected>elije el medio</option>
+        <option value="correoelectronico">correo electronico</option>
+        <option value="redessociales">redes sociales</option>
+        <option value="telefonofijo">telefono fijo</option>
+        <option value="mensajes">mensajes</option>
+        <option value="otronumero">otro numero</option>
+      </select>
+      <label for="direction">dirección</label>
+      <input type="text" name="direction" id="direction" placeholder="dijita dirección" pattern="[A-Za-z0-9]+"
+        minlength="2" maxlength="8" required>
+    </fieldset><br>
+    <fieldset>
+      <legend>información de solicitud</legend>
+      <label for="fechaven">fecha de vencimiento</label>
+      <input type="date" id="fechaven" name="fechaven" value="2024-02-27" required><br>
+      <br>
+      <label for="Asunto">Asunto</label>
+      <input type="text" id="Asunto" name="Asunto" pattern="[a-zA-Z ]{1,420}" placeholder="Asunto" minlength="10"
+        maxlength="50" required><br>
+      <br>
+      <label for="quejas">Quejas</label><br>
+      <textarea name="quejas" id="quejas" cols="30" rows="10" required maxlength="200" minlength="10"
+        placeholder="quejas"></textarea><br>
+      <br>
+      <label for="abjunto">Abjunto:</label>
+      <input type="file" id="abjunto" name="abjunto" accept="image/png, image/jpeg" multiple required>
+    </fieldset>
+    <input type="submit" value="enviar">
+  </form>
+</body>
+
+</html>
